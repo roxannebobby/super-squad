@@ -1,6 +1,6 @@
-import characters_data from '../data/characters_data.json';
+import characters_json from '../data/characters.json';
 
 export function createCharacter(id) {
-	let character = characters_data.find((c) => c.id === id);
-	return character;
+  let character = characters_json.find(c => c.id === id);
+  return character;
 }
