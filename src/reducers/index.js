@@ -1,16 +1,10 @@
-import characters_data from '../data/characters_data.json';
-// braces required because we didn't export as default
-import { ADD_CHARACTER } from '../actions';
+import { combineReducers } from 'redux';
+import characters from './charactersReducer';
+import heroes from './heroesReducer';
 
-function characters(state = characters_data, action) {
-	switch (action.type) {
-		case ADD_CHARACTER:
-			let characters = state.filter((item) => item.id !== action.id);
-			return characters;
+const rootReducer = combineReducers({
+	characters,
+	heroes,
+});
 
-		default:
-			return state;
-	}
-}
-
-export default characters;
+export default rootReducer;
